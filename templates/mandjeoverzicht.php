@@ -15,6 +15,7 @@
                                     <th>Prijs</th>
                                     <th>Aantal</th>
                                     <th>Te betalen</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>";
@@ -28,6 +29,10 @@
                                         <td> €$wijn->prijs </td>
                                         <td> $wijn->aantal </td>
                                         <td> €$prijsPerWijn </td>
+                                        <form action='mandjeVerwijder.php' method='POST'>
+                                                <input type='hidden' name='id' value='$wijn->id'>
+                                                <td><button type='submit' class='btn btn-danger' name='submit'>Verwijder</button></td>
+                                        </form>
                                         </tr>";
                                 }
 
@@ -38,13 +43,14 @@
                                 echo "
                                 <h4 class='pull-right'>Totaal: €$totaalBedrag </h4>
                                 <br><br>";
+
+                                echo "
+                                <form action='bestellingPlaatsen.php' method='POST'>
+                                        <button type='submit' class='btn btn-primary' name='submit'>Bestelling plaatsen</button>
+                                        <br><br>
+                                </form>
+                                ";
                         }
-
-                ?>
-
-        <form action="bestellingPlaatsen.php" method="POST">
-                <button type="submit" class="btn btn-primary" name="submit">Bestelling plaatsen</button>
-                <br><br>
-            </form>
+                ?>        
         </div>
 <?php include 'includes/footer.php'; ?>

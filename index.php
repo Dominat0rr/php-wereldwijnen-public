@@ -18,7 +18,7 @@
     $template->soorten = null;
     $template->land = null;
 
-    if ($landId) {
+    if ($landId != null) {
         $land = $landView->getLandById($landId);
         $template->title = "Soorten uit: " . $land->naam;
         $template->land = $land;

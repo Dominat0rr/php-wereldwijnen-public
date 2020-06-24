@@ -14,9 +14,14 @@
         $data["wijnId"] = $_POST["wijnId"];
         $data["aantal"] = $_POST["aantal"];
 
-        $_SESSION["cart"][] = $data;
-        $wijn = $wijnView->getWijnById($data["wijnId"]);
-        redirect("mandje.php", "Wijn uit " . $wijn->jaar . " is succesvol toegevoegd aan uw mandje", "success");
+        if ($data["aantal"] != null && $data["aantal"] > 0) {
+            $_SESSION["cart"][] = $data;
+            $wijn = $wijnView->getWijnById($data["wijnId"]);
+            redirect("mandje.php", "Wijn uit " . $wijn->jaar . " is succesvol toegevoegd aan uw mandje", "success");
+        }
+        else {
+            redirect("wijn.php?id=" . $data["wijnId"], "Gelieve een geldig aantal in te voeren", "error");
+        }
     }
 
 ?>

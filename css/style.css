@@ -64,3 +64,9 @@ li {
 .login-title {
     margin-bottom: 1.5rem;
 }
+
+.footer {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}

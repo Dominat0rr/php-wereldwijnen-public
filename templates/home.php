@@ -10,7 +10,7 @@
                 <p><?php echo $soort->id; ?></p>
                 </div>
                 <div class="col-md-2">
-                    <a href="soort.php?id=<?php echo $soort->id; ?>" class="btn btn-success">View</a>
+                    <a href="soort.php?id=<?php echo $soort->id; ?>" class="btn btn-success">Bekijk soort</a>
                 </div>
         </div>
         <?php 

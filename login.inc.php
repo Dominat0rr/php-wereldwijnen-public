@@ -37,5 +37,8 @@
             }
         }
     }
+    else {
+        redirect("./login.php", "Er is iets fout gelopen", "error");
+    }
 
 ?>
