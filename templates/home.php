@@ -1,6 +1,6 @@
 <?php include 'includes/header-w-subheader.php'; ?>
 
-        <h3 class="title"><?php echo $title; ?></h3>
+        <h3 class="title text-center"><?php echo $title; ?></h3>
         <?php  
             if ($land != null && $soorten != null) {
             foreach($soorten as $soort): ?>
