@@ -21,6 +21,8 @@
             }
         ?>
 
+    <div class="pagination">
         <?php echo $links; ?>
+    </div>
 
 <?php include 'includes/footer.php'; ?>

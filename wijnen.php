@@ -32,20 +32,20 @@
         $totalPages = $startPage + 11;
     }
 
-    if ($page > 11) {
-        $template->links .= "<a class='btn btn-primary links-first' href='wijnen.php?page=$firstPage'>$firstPage</a> ";
+    if ($page != 1) {
+        $template->links .= "<a class='btn btn-info links-first' href='wijnen.php?page=$firstPage'>$firstPage</a>";
     }
 
-    for ($i = $startPage; $i < $totalPages; $i++) {
-        if ($i <= $latestPage) {
-            $template->links .= ($i != $page) ? "<a class='btn btn-primary links' href='wijnen.php?page=$i'>$i</a> ": " $page ";
+    for ($i = $startPage; $i <= $totalPages; $i++) {
+        if ($i <= $latestPage && ($i != 1 || $page == 1) && ($i != $latestPage || $page == $latestPage)) {
+            $template->links .= ($i != $page) ? "<a class='btn btn-primary links' href='wijnen.php?page=$i'>$i</a>": "<a class='btn btn-dark links-active'>$i</a>";
         }
     }
 
     $template->latestPage = $latestPage;
 
     if ($page < $latestPage) {
-        $template->links .= "<a class='btn btn-primary links-last' href='wijnen.php?page=$latestPage'>$latestPage</a> ";
+        $template->links .= "<a class='btn btn-info links-last' href='wijnen.php?page=$latestPage'>$latestPage</a>";
     }
 
     $template->landenHeader = $landView->getLanden();

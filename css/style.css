@@ -41,14 +41,6 @@ li {
     margin-bottom: 1rem;
 }
 
-.links-first {
-    margin-right: 1rem;
-}
-
-.links-last {
-    margin-left: 1rem;
-}
-
 .btn-login {
     margin-right: 0.5rem;
 }
@@ -65,8 +57,24 @@ li {
     margin-bottom: 1.5rem;
 }
 
+.links-active {
+    cursor: default !important;
+    color: white !important;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination > a {
+    margin-left: 0.5rem;
+}
+
 .footer {
     display: flex !important;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
 }
